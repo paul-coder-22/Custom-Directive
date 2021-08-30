@@ -1,0 +1,23 @@
+<hello name="{{ name }}"></hello>
+<p appCustom>
+  Start editing to see some magic happen :)
+</p>
+
+<h1 appCustom>Hello World</h1>
+
+
+
+<!-- <h1 [style.color]="color">I'm green text</h1> -->
+
+<!-- passing data in directive  -->
+<!-- <h1 [appCustom]="color">I'm green text</h1> -->
+
+
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appCustom]="color">Highlight me!</p>
+
+<!-- <h1 [style.color]="color">Hello</h1> -->
