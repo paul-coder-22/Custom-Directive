@@ -10,4 +10,7 @@ export class AppComponent {
 
   /* data pass in directive */
   color = '';
+
+  title = 'Parent Component';
+  message = 'this is an amazing app';
 }

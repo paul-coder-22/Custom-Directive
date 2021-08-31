@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appCustom]'
+  selector: '[appCustom]',
+  exportAs: 'appCustom'
 })
 export class CustomDirective {
   constructor(private el: ElementRef) {
@@ -16,11 +17,21 @@ export class CustomDirective {
     this.highlight('');
   }
 
-  private highlight(color: string) {
+  highlight(color: string) {
     console.log(color);
     this.el.nativeElement.style.backgroundColor = color;
   }
 
   @Input('appCustom') highlightColor = '';
   @Input() defaultColor = '';
+
+  @Input() color: any;
+  @HostListener('mouseenter') onMouseEnterdiv() {
+    // this.highlight('red');
+    this.highlight(this.color);
+  }
+
+  @HostListener('mouseleave') onMouseLeavediv() {
+    this.highlight('');
+  }
 }

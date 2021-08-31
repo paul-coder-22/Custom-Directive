@@ -22,3 +22,12 @@
 <p [appCustom]="color" defaultColor="violet">Highlight me! defaultColor</p>
 
 <!-- <h1 [style.color]="color">Hello</h1> -->
+
+
+
+<!-- To access public properties and methods of the custom directive, Angular provides exportAs property.-->
+<div>
+  <h2>{{title}}</h2>
+  <div appCustom [color]="'yellow'" #a='appCustom'>{{message}}</div>
+  <button (click)="a.highlight('green')">Change Background</button>
+</div>
